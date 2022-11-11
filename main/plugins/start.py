@@ -2,7 +2,6 @@ import os
 from .. import bot as Altron
 from telethon import events
 
-from ethon.mystarts import start_srb
 
 @Altron.on(events.callbackquery.CallbackQuery(data="set"))
 async def sett(event):    
@@ -38,4 +37,4 @@ async def remt(event):
 @Altron.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
     text = "Send me Link of any message to clone it here, For private channel message, send invite link first.\n\n**SUPPORT:** @TheAltron"
-    await start_srb(event, text)
+    await event.reply(text, parse_mode=None, link_preview=None )
